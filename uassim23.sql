@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2025 at 05:16 PM
+-- Generation Time: Jun 16, 2025 at 04:12 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -36,13 +36,6 @@ CREATE TABLE `detail_so` (
   `subtotal` decimal(15,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `detail_so`
---
-
-INSERT INTO `detail_so` (`iddetail`, `idso`, `idproduk`, `jumlah`, `subtotal`) VALUES
-(20, 13, 8, 2, '50000000.00');
-
 -- --------------------------------------------------------
 
 --
@@ -61,7 +54,7 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`idpelanggan`, `nama`, `alamat`, `no_telp`) VALUES
-(7, 'yaya', 'Batavia', '089745321456');
+(9, 'Azka', 'Jl kepo yy', '089745321456');
 
 -- --------------------------------------------------------
 
@@ -82,7 +75,7 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`idproduk`, `kode_produk`, `nama_produk`, `harga`, `stok`) VALUES
-(8, 'BRG01', 'TV SAMSUNGG', '25000000.00', 2);
+(11, 'BRG01', 'TV SAMSUNGG', '25000000.00', 4);
 
 -- --------------------------------------------------------
 
@@ -100,7 +93,7 @@ CREATE TABLE `sales` (
 --
 
 INSERT INTO `sales` (`idsales`, `nama_sales`) VALUES
-(6, 'Santa');
+(7, 'Yayaaa');
 
 -- --------------------------------------------------------
 
@@ -117,13 +110,6 @@ CREATE TABLE `salesorder` (
   `status` enum('draft','dikirim','selesai','dibatalkan') DEFAULT 'draft',
   `total_harga` decimal(15,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `salesorder`
---
-
-INSERT INTO `salesorder` (`idso`, `kode_so`, `tanggal`, `idpelanggan`, `idsales`, `status`, `total_harga`) VALUES
-(13, 'PO001', '2025-06-07', 7, 6, 'dikirim', '50000000.00');
 
 -- --------------------------------------------------------
 
@@ -230,31 +216,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `detail_so`
 --
 ALTER TABLE `detail_so`
-  MODIFY `iddetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `iddetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `idpelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idpelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `idsales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idsales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `salesorder`
 --
 ALTER TABLE `salesorder`
-  MODIFY `idso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `status_order`
