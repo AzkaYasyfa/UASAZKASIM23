@@ -129,19 +129,16 @@ public function update_status($id)
             redirect('salesorder/tambah');
         }
     }
-   // Menampilkan form laporan
+
     public function laporan() {
         $this->load->view('templates/header');
         $this->load->view('salesorder/laporan_form');
         $this->load->view('templates/footer');
     }
 
-    // Cetak laporan berdasarkan tanggal input dari form
     public function cetak_laporan() {
         $tanggal_dari = $this->input->post('tanggal_dari');
         $tanggal_sampai = $this->input->post('tanggal_sampai');
-
-        // Ambil data laporan dari model
         $data['salesorder'] = $this->Salesorder_model->get_laporan_salesorder($tanggal_dari, $tanggal_sampai);
         $data['tanggal_dari'] = $tanggal_dari;
         $data['tanggal_sampai'] = $tanggal_sampai;
@@ -151,9 +148,6 @@ public function update_status($id)
         $this->load->view('templates/footer');
     }
 
-
-
-    // Update sales order
     public function update($idso) {
         $this->form_validation->set_rules('kode_so', 'Kode SO', 'required');
         $this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
@@ -208,7 +202,6 @@ public function update_status($id)
         }
     }
 
-    // Hapus sales order
     public function delete($idso) {
         if ($this->Salesorder_model->delete_order($idso)) {
             $this->session->set_flashdata('success', 'Sales order berhasil dihapus');

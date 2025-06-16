@@ -46,11 +46,10 @@ class Produk extends MY_Controller {
     }
 
     public function hapus($idproduk){
-    // Hapus terlebih dahulu data terkait di detail_so
+
     $this->db->where('idproduk', $idproduk);
     $this->db->delete('detail_so');
 
-    // Kemudian hapus data produk
     $this->Produk_model->delete_produk($idproduk);
 
     $this->session->set_flashdata('success', 'Produk dan detail SO terkait berhasil dihapus.');
@@ -75,7 +74,6 @@ class Produk extends MY_Controller {
         } else {
             $kode_produk = $this->input->post('kode_produk');
 
-            // Cek apakah kode_produk sudah digunakan oleh produk lain
             if ($this->Produk_model->cek_kode_produk_duplikat($kode_produk, $id)) {
                 $this->session->set_flashdata('error', 'Kode Produk sudah digunakan produk lain.');
                 return $this->edit($id);

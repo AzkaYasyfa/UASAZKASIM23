@@ -51,7 +51,6 @@
             </div>
 
             <div class="card-footer">
-                <!-- Optional: Tambahan catatan -->
             </div>
         </div>
     </section>

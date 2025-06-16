@@ -69,7 +69,6 @@
             </div>
 
             <div class="card-footer">
-                <!-- Bisa ditambahkan informasi tambahan di sini -->
             </div>
         </div>
     </section>

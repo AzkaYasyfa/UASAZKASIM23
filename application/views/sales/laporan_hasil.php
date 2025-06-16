@@ -13,11 +13,11 @@
           </ol>
         </div>
       </div>
-    </div><!-- /.container-fluid -->
+    </div>
   </section>
   <section class="content">
 
-    <!-- Default box -->
+
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">List Berita</h3>
@@ -53,14 +53,13 @@
       </tbody>
     </table>
   </div>
-  <!-- /.card-body -->
+
   <div class="card-footer">
 
   </div>
-   <!-- /.card-footer -->
 </div>
-<!-- /.card -->
+
 
         </section>
- <!-- /.card-body -->
+
         </div>

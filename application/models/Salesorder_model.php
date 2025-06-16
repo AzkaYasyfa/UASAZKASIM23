@@ -127,10 +127,9 @@ class Salesorder_model extends CI_Model {
         $this->db->where('so.tanggal >=', $tanggal_dari);
         $this->db->where('so.tanggal <=', $tanggal_sampai);
         $this->db->order_by('so.tanggal', 'ASC');
-        return $this->db->get()->result(); // result objek
+        return $this->db->get()->result(); 
     }
 
-    // Ini method yang kamu panggil dari controller
     public function updateSalesOrder($idso, $data) {
         $this->db->where('idso', $idso);
         return $this->db->update('salesorder', $data);

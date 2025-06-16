@@ -17,7 +17,6 @@
   </section>
 
   <section class="content">
-    <!-- Default box -->
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Hasil Laporan</h3>
@@ -63,7 +62,6 @@
       </div>
 
       <div class="card-footer">
-        <!-- Tambahkan info atau tombol jika perlu -->
       </div>
     </div>
   </section>

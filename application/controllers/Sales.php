@@ -35,12 +35,20 @@ class Sales extends CI_Controller {
         redirect('sales');
     }
 
-    public function hapus($id) {
-        if (!$this->Sales_model->delete_sales($id)) {
-            $this->session->set_flashdata('error', 'Gagal menghapus data sales. Mungkin data sedang digunakan.');
-        }
-        redirect('sales');
+public function hapus($id) {
+    $sales_orders = $this->db->get_where('salesorder', ['idsales' => $id])->result();
+
+    foreach ($sales_orders as $so) {
+        $this->db->where('idso', $so->idso);
+        $this->db->delete('detail_so');
+        $this->db->where('idso', $so->idso);
+        $this->db->delete('salesorder');
     }
+    $this->Sales_model->delete_sales($id);
+
+    $this->session->set_flashdata('success', 'Sales berhasil dihapus.');
+    redirect('sales');
+}
 
     public function edit($id) {
         $data['sales'] = $this->Sales_model->get_sales_by_id($id);
@@ -72,7 +80,6 @@ class Sales extends CI_Controller {
         $data['sales'] = $this->Sales_model->get_laporan_sales($tanggal_dari, $tanggal_sampai);
         $data['tanggal_dari'] = $tanggal_dari;
         $data['tanggal_sampai'] = $tanggal_sampai;
-        //print_r($data);
         $this->load->view('templates/header');
         $this->load->view('sales/laporan_hasil', $data);
         $this->load->view('templates/footer');

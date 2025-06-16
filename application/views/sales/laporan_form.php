@@ -1,5 +1,4 @@
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
@@ -13,11 +12,11 @@
           </ol>
         </div>
       </div>
-    </div><!-- /.container-fluid -->
+    </div>
   </section>
 
   <section class="content">
-    <!-- Default box -->
+
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">List Berita</h3>
@@ -48,14 +47,9 @@
           </div>
         </form>
       </div>
-
-      <!-- /. Card Body -->
       <div class="card-footer">
         Footer
       </div>
-      <!-- /. Card-footer -->
     </div>
-    <!-- /. Card -->
   </section>
-  <!-- /. Content -->
 </div>

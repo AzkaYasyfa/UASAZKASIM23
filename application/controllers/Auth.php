@@ -7,9 +7,7 @@ class Auth extends CI_Controller{
         $this->load->model('User_model');
     }
     public function login(){
-        //$this->load->view('templates/header');
         $this->load->view('auth/login');
-        //$this->load->view('templates/footer');
     }
 
     public function register(){

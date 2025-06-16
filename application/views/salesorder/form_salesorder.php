@@ -155,6 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    hitungTotal(); // hitung pertama kali saat halaman load
+    hitungTotal(); 
 });
 </script>
